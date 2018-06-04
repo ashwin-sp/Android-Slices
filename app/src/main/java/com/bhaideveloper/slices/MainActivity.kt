@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         registerReceiver(broadcastReceiver, IntentFilter("stateBroadcast"))
         toggle.setOnCheckedChangeListener { p0, p1 ->
             MySliceProvider.state = p1
-            this.contentResolver.notifyChange(MySliceProvider.getUri(this,"/"),null)
+            this.contentResolver.notifyChange(MySliceProvider.getUri(this,"/task"),null)
         }
 
     }

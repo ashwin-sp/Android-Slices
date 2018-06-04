@@ -39,7 +39,7 @@
             -->
         </provider>
 
-        <receiver android:name=".MyReceiver"></receiver>
+        <receiver android:name=".MyReceiver" />
     </application>
 
 </manifest>

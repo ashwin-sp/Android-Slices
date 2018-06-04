@@ -51,14 +51,14 @@ class MySliceProvider : SliceProvider() {
      * Construct the Slice and bind data if available.
      */
     override fun onBindSlice(sliceUri: Uri): Slice? {
-        return if (sliceUri.path == "/") {
+        return if (sliceUri.path == "/task") {
             // Path recognized. Customize the Slice using the androidx.slice.builders API.
             // Note: ANR and StrictMode are enforced here so don't do any heavy operations. 
             // Only bind data that is currently available in memory.
-             val spannableStr = SpannableStringBuilder("URI found.")
-             spannableStr.setSpan(StyleSpan(Typeface.ITALIC),0, spannableStr.length, 0)
+//             val spannableStr = SpannableStringBuilder("Task Completed? ")
+//             spannableStr.setSpan(StyleSpan(Typeface.ITALIC),0, spannableStr.length, 0)
              ListBuilder(context, sliceUri, INFINITY)
-                    .addRow {it.setTitle(spannableStr)
+                    .addRow {it.setTitle("Task Completed? ")
                     it.setPrimaryAction(createActivityAction())
                     it.addEndItem(createToggleAction(!state))
                     }

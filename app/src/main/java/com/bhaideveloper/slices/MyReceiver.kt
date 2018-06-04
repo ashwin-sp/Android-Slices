@@ -18,7 +18,7 @@ class MyReceiver : BroadcastReceiver() {
             println("State at receiver $state")
             val i = Intent("stateBroadcast")
             i.putExtra(CHECKED, state)
-            context.contentResolver.notifyChange(MySliceProvider.getUri(context,"/"), null)
+            context.contentResolver.notifyChange(MySliceProvider.getUri(context,"/task"), null)
             context.sendBroadcast(i);
         }
     }
